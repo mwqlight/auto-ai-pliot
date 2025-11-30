@@ -1,0 +1,119 @@
+spring:
+  application:
+    name: ai-cockpit-backend
+  
+  # 数据源配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/ai_cockpit?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=GMT%2B8
+    username: root
+    password:
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 5
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+  
+  # JPA配置
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true
+        use_sql_comments: true
+  
+  # Redis配置
+  redis:
+    host: localhost
+    port: 6379
+    password:
+    database: 0
+    lettuce:
+      pool:
+        max-active: 20
+        max-wait: -1
+        max-idle: 8
+        min-idle: 0
+    timeout: 10000
+  
+  # 文件上传配置
+  servlet:
+    multipart:
+      max-file-size: 10GB
+      max-request-size: 10GB
+  
+  # 缓存配置
+  cache:
+    type: redis
+    redis:
+      time-to-live: 3600000
+      cache-null-values: false
+
+# 服务器配置
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+  tomcat:
+    max-swallow-size: -1
+
+# 日志配置
+logging:
+  level:
+    com.ai.cockpit: debug
+    org.springframework.security: debug
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+  file:
+    name: logs/ai-cockpit.log
+
+# JWT配置
+jwt:
+  secret: ai-cockpit-secret-key-2024
+  expiration: 86400000
+  header: Authorization
+
+# MinIO配置
+minio:
+  endpoint: http://localhost:9000
+  accessKey: minioadmin
+  secretKey: minioadmin
+  bucketName: ai-cockpit
+
+# AI服务配置
+ai:
+  huggingface:
+    token: ${HUGGINGFACE_TOKEN:}
+  openai:
+    api-key: ${OPENAI_API_KEY:}
+  model:
+    default-embedding: all-MiniLM-L6-v2
+    default-chat: gpt-3.5-turbo
+
+# 安全配置
+security:
+  cors:
+    allowed-origins: "http://localhost:3000,http://localhost:5173"
+    allowed-methods: "GET,POST,PUT,DELETE,OPTIONS"
+    allowed-headers: "*"
+    allow-credentials: true
+
+# 监控配置
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "health,info,metrics"
+  endpoint:
+    health:
+      show-details: always
+
+# 应用配置
+app:
+  version: 1.0.0
+  name: AI Cockpit Platform
+  description: AI驾驶舱平台后端服务

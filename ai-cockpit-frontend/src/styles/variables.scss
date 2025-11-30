@@ -1,0 +1,69 @@
+// 颜色变量
+$primary-color: #00f3ff;
+$secondary-color: #bf00ff;
+$accent-color: #ff6b35;
+
+// 背景色
+$bg-primary: #0f111a;
+$bg-secondary: #1a1d2e;
+$bg-tertiary: #252a3d;
+
+// 文字色
+$text-primary: #ffffff;
+$text-secondary: #a0a0a0;
+$text-muted: #6c757d;
+
+// 边框色
+$border-color: #2d3748;
+$border-light: #4a5568;
+
+// 状态色
+$success-color: #10b981;
+$warning-color: #f59e0b;
+$error-color: #ef4444;
+$info-color: #3b82f6;
+
+// 阴影
+$shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+$shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+$shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+// 霓虹效果
+$neon-glow: 0 0 5px $primary-color, 0 0 10px $primary-color, 0 0 15px $primary-color;
+$neon-glow-secondary: 0 0 5px $secondary-color, 0 0 10px $secondary-color, 0 0 15px $secondary-color;
+
+// 渐变
+$gradient-primary: linear-gradient(135deg, $primary-color 0%, $secondary-color 100%);
+$gradient-bg: linear-gradient(135deg, $bg-primary 0%, $bg-secondary 100%);
+$gradient-card: linear-gradient(145deg, $bg-secondary 0%, $bg-tertiary 100%);
+
+// 字体
+$font-family-base: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$font-family-mono: 'Courier New', Courier, monospace;
+
+// 间距
+$spacing-xs: 0.25rem;
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 1.5rem;
+$spacing-xl: 2rem;
+$spacing-2xl: 3rem;
+
+// 边框圆角
+$border-radius-sm: 0.25rem;
+$border-radius-md: 0.5rem;
+$border-radius-lg: 0.75rem;
+$border-radius-xl: 1rem;
+
+// 动画
+$transition-fast: 0.15s ease-in-out;
+$transition-normal: 0.3s ease-in-out;
+$transition-slow: 0.5s ease-in-out;
+
+// 响应式断点
+$breakpoint-sm: 640px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+$breakpoint-2xl: 1536px;
